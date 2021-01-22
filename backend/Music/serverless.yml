@@ -1,0 +1,60 @@
+# Welcome to Music!
+# Contain 2 functions (authenticate search)
+# Happy Coding!
+
+service: music
+
+frameworkVersion: '2'
+
+provider:
+  name: aws
+  runtime: nodejs12.x
+  lambdaHashingVersion: 20201221
+  stage: dev
+  region: us-east-1
+
+plugins:
+  - serverless-plugin-typescript
+  - serverless-offline
+
+
+functions:
+
+  authenticate:
+    handler: functions/authenticate.main
+    memorySize: 128
+    description: Authorization for Spotify.
+    events:
+      - http:
+          path: authenticate
+          method: get
+          cors:
+            origin: '*' # <-- Specify allowed origin
+            headers: # <-- Specify allowed headers
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+
+  search:
+    handler: functions/search.main
+    memorySize: 128
+    description: Search track,album,artist for Spotify.
+    events:
+      - http:
+          path: search
+          method: get
+          cors:
+            origin: '*' # <-- Specify allowed origin
+            headers: # <-- Specify allowed headers
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+          request:
+            template:
+              application/json: '{ "q" : "$input.params(''q'')", "type" : "$input.params(''type'')", "page" : "$input.params(''page'')" }'

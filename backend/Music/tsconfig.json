@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true ,
+    "rootDir": "./",
+    "typeRoots": ["node_modules/@types"],
+    "moduleResolution": "node"
+  },
+  "include" : ["./**/*"],
+  "exclude" : ["node_modules", "build", "test"]
+}
