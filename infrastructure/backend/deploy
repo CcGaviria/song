@@ -1,0 +1,41 @@
+#!/bin/bash
+
+#
+# Cristian Gaviria - Cristian@gaviria.org
+# https://music.gaviria.org | Test La Manicurista (Tualy) | F! solo te roban el código :)
+# Copyright (c) 2012 - 2021. https://gaviria.org
+#
+#
+
+# Usage ./deploy [aws-profile]
+
+if [ -v $1 ] | [ -v $2 ]; then
+  echo "ERROR: Usage ./deploy [aws-profile] [environment]"
+  exit
+fi
+if [ $2 -ne "development" ] | [ $2 -ne "production" ] | [ $2 -ne "staging" ]; then
+  echo "ERROR: development, staging, production are the environments"
+  exit
+fi
+serverless --version
+if [ $? != "0" ]; then
+  echo
+  echo 'Your system dont have serverless installed.'
+  exit
+fi
+
+echo "Deploying to Aws"
+grep -w $1 ~/.aws/credentials
+if [ $? == "1" ]; then
+  echo
+  echo "Profile [$1] does not exist."
+  exit
+fi
+echo "The profile [$1] is correct. Continuing.. "
+cd ../../Backend/Music
+npm install
+sls deploy -s $2 --aws-profile=$1
+if [ $? == "0" ]; then
+  echo "Deployment finished successfully."
+  exit
+fi
