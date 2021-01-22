@@ -1,0 +1,29 @@
+#!/bin/bash
+
+#
+# Cristian Gaviria - Cristian@gaviria.org
+# https://music.gaviria.org | Test La Manicurista (Tualy) | F! solo te roban el código :)
+# Copyright (c) 2012 - 2021. https://gaviria.org
+#
+#
+
+dir_script=`dirname $0`;
+echo $dir_script
+cd $dir_script
+cd backend/Music || exit && npm install
+npm run local &
+cd ../../frontend/ccgo-song || exit && npm install && npm start &
+more nohup.out
+echo '''
+                 |                   ___ _    _ ___ _____   |
+                 ||  /\  |\/| /\ |\ | | / | ||_) | (_  | /\ |
+                 ||_/--\ |  |/--\| \|_|_\_|_|| \_|___) |/--\|
+                 |__________________________________________|
+'''
+echo
+echo
+echo '''
+ _______ _______ _______ _______       ______ _     _ __   _ __   _ _____ __   _  ______
+    |    |______ |______    |         |_____/ |     | | \  | | \  |   |   | \  | |  ____
+    |    |______ ______|    |         |    \_ |_____| |  \_| |  \_| __|__ |  \_| |_____|
+'''
