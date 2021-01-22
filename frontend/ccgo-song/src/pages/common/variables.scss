@@ -1,0 +1,274 @@
+/*!
+ * Cristian Gaviria - Cristian@gaviria.org
+ * https://music.gaviria.org | Test La Manicurista (Tualy) | F! solo te roban el código :)
+ * Copyright (c) 2012 - 2021. https://gaviria.org
+ *
+ */
+
+
+
+$col-one: #d6fff3;
+$col-two: #000;
+$col-third: #cecece;
+$col-four: #fff;
+$col-five: #068672;
+$col-six: #ef6088d1;
+
+.active {
+  color: rgb(50,49,100);
+}
+
+.f-1 {
+  flex: 1;
+}
+.f-5 {
+  flex: 5;
+}
+article {
+  background: rgb(242,245,249);
+}
+a {
+  cursor: pointer;
+  color: rgb(195,202,213);
+  font-weight: bold;
+  text-decoration: none;
+  letter-spacing: -1px;
+
+  &:active, &:hover {
+    color: black;
+  }
+}
+.c-t {
+  color: $col-third;
+}
+.c-tw {
+  color: $col-two;
+}
+
+//Colors
+.c-f {
+  color: $col-four;
+}
+.c-o {
+  color: $col-one;
+}
+.bc-f {
+  background-color: $col-four;
+}
+.bc-s {
+  background-color: $col-six;
+}
+.bc-fv{
+  background-color: $col-five;
+
+}
+.bc-t{
+  background-color: $col-third;
+
+}
+.d-f{
+  display: flex;
+}
+.d-if{
+  display: inline-flex;
+}
+.d-fr{
+  display: flow-root;
+}
+
+.d-ig {
+  display: inline-grid;
+}
+
+.fd-c{
+  flex-direction: column;
+}
+
+.fd-r {
+  flex-direction: row;
+}
+
+.jc-c {
+  justify-content: center;
+}
+.jc-sa {
+  justify-content: space-around;
+}
+.jc-sb {
+  justify-content: space-between;
+}
+.jc-se {
+  justify-content: space-evenly;
+}
+
+
+.wm-vl{writing-mode: vertical-lr;}
+.ai-c {
+  align-items: center;
+}
+.ai-fe {
+  align-items: flex-end;
+}
+.ai-fs {
+  align-items: flex-start;
+}
+
+.f-ua {
+  flex: 1 auto;
+}
+.f-uua {
+  flex: 1 1 auto;
+}
+
+.bi-al {
+  background-image: url("https://estaliron.gav1r1a.com/images/logoAliron.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
+.b-i {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+}
+
+.zi-- {
+  z-index: -1;
+}
+
+.bs-co {
+  -webkit-box-shadow: 13px 20px 89px -1px rgba(214,255,243,0.87);
+  -moz-box-shadow: 13px 20px 89px -1px rgba(214,255,243,0.87);
+  box-shadow: 13px 20px 89px -1px rgba(214,255,243,0.87);
+}
+
+.wi-tr {
+  width: 3em;
+}
+.wi-fv {
+  width: 5em;
+}
+
+.fs-2{
+  font-size: 1.7em;
+}
+
+.d-n{
+  display: none;
+}
+
+.cur-p {
+  cursor: pointer;
+}
+// Pointer events
+.pe-none {
+  pointer-events: none;
+}
+.pos-r {
+  position: relative;
+}
+
+.pos-ab{
+  position: absolute;
+}
+//margin
+
+.m-a {
+  margin: auto;
+}
+
+.mr-1 {
+  margin-right: .3em;
+  margin-bottom: .1em;
+}
+
+
+//slider
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height:28px;
+  z-index: 2;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgb(154,167,185);
+  -webkit-transition: .4s;
+  transition: .4s;
+
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 21px;
+  width: 21px;
+  left: 4px;
+  bottom: 4px;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  background-color: rgb(255,255,255);
+}
+
+input:checked + .slider {
+  background-color: $col-four;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px $col-four;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(20px);
+  -ms-transform: translateX(20px);
+  transform: translateX(20px);
+  background-color: rgb(29,160,142);
+
+}
+.slider.round {
+  border-radius: 34px;
+}
+.slider.round:before {
+  border-radius: 50%;
+}
+
+// Textures
+.shadow-texture {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 1em;
+
+  background:url(
+  data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAGUlEQVQYV2NkQAOMaHxfdAEGZAFfBgaGzQANqQFSHs4oGwAAAABJRU5ErkJggg==
+  ) repeat;
+  opacity: 0.7;
+}
+
+.text-initial {
+  font-size: 2em;
+  text-align: center;
+  color: #f1f1f1;
+  text-shadow: 1px 1px 2px black, 0 0 25px #969696, 0 0 5px #5b2b77;
+  cursor: help;
+}

@@ -1,0 +1,80 @@
+/*!
+ * Cristian Gaviria - Cristian@gaviria.org
+ * https://music.gaviria.org | Test La Manicurista (Tualy) | F! solo te roban el código :)
+ * Copyright (c) 2012 - 2021. https://gaviria.org
+ *
+ */
+
+@import '../variables';
+
+.ct-sect2  {
+  width: 100%;
+}
+.ct-marketplace {
+
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: 7em;
+  background-image: url('../../../rsc/assets/logo-left.png');
+  width: 100%;
+  height: 17em;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.ct-menuleft {
+  background-color: rgb(253,253,253);
+
+  nav {
+    margin-top: 2em;
+  }
+  .ct-submenu {
+
+    display: block;
+    list-style-type: disc;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+  }
+  li {
+
+    .active {
+      color: rgb(90,90,170);
+    }
+
+    border-bottom: 1px solid rgb(242,244,249);
+    width: 9em;
+    justify-content: flex-start;
+    display: flex;
+    padding: 1em;
+    font-size: .9em;
+    a{
+      font-weight:400;
+
+      &:hover, &:active {
+        color: rgb(90,90,170);
+      }
+    }
+    i {
+      margin-right: .7em;
+    }
+  }
+}
+.tx-sop {
+  color: #cecece;
+}
+.ct-icon-sop {
+  border: 1px solid #f4f4f4;
+  border-radius: 100%;
+  height:2em;
+  width:2em;
+  margin-right: .8em;
+
+
+
+  i {
+  color: #cecece;
+}
+}
